@@ -685,7 +685,7 @@ async function handleSubmit2(event) {
     `    Ім'я: ${name}, 
      Номер телефону: ${phone},
      Кількість: ${quantity}, 
-     Час: ${formattedDate}`;
+     Час: ${formattedDate}`
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
         axios.post(url, {
