@@ -624,6 +624,14 @@
     const chatId = '1026116360'
     const form1 = document.querySelector('#order_form')
     const form2 = document.querySelector('.main-order-form')
+    const closeBtn = document.querySelector('.close-m1')
+    const modalBg = document.querySelector('#overlay-popup-m1')
+    const modalForm = document.querySelector('#m1-form')
+    function closeModal(event) {
+      modalBg.style.display = 'none'
+      modalForm.style.display = 'none'
+    }
+    closeBtn.addEventListener('click', closeModal)
     function formatDate(date) {
             const year = date.getFullYear();
             const month = String(date.getMonth() + 1).padStart(2, '0')
@@ -666,6 +674,7 @@
         console.error('Error message:', error.message);
     }
 });
+alert("Дякуємо за замовлення, менеджер скоро звяжеться з вами!")
 form1.reset()
 }
 form1.addEventListener('submit', handleSubmit1);
@@ -703,6 +712,8 @@ async function handleSubmit2(event) {
         console.error('Error message:', error.message);
     }
 });
+alert("Дякуємо за замовлення, менеджер скоро звяжеться з вами!")
+closeModal()
 form2.reset()
 }
 form2.addEventListener('submit', handleSubmit2)
